@@ -15,7 +15,6 @@ app.post('/api/chat', async (req, res) => {
       },
       body: JSON.stringify({
         model: 'gpt-4o',
-        max_tokens: 4096,
         messages: req.body.messages || []
       })
     });
@@ -23,9 +22,7 @@ app.post('/api/chat', async (req, res) => {
     const data = await response.json();
 
     if (!response.ok) {
-      return res.status(response.status).json({ 
-        error: data.error?.message || 'OpenAI API error' 
-      });
+      return res.status(response.status).json({ error: data.error?.message });
     }
 
     res.json({ reply: data.choices[0].message.content });
