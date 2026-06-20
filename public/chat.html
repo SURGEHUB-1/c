@@ -35,7 +35,7 @@
 </style>
 </head>
 <body>
-<div id="header">Claude Assistant</div>
+<div id="header">ChatGpt</div>
 <div id="messages"></div>
 <div id="input-area">
   <input type="text" id="input" placeholder="Ask anything..." autocomplete="off">
@@ -106,7 +106,7 @@ async function sendMessage(){
   }
 }
 inputEl.addEventListener('keypress',e=>{if(e.key==='Enter')sendMessage()});
-window.addEventListener('DOMContentLoaded',()=>addMessage("Hi! I'm Claude. How can I help you today?",'bot'));
+window.addEventListener('DOMContentLoaded',()=>addMessage("What’s on your mind today?",'bot'));
 </script>
 </body>
 </html>
